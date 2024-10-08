@@ -22,13 +22,14 @@ const DataModel = mongoose.model('listdata', DataSchema); // Ensure the model na
 
 // Endpoint to fetch data
 app.get('/api/data', async (req, res) => {
-  try {
-    const data = await DataModel.find(); // Fetch data from MongoDB
-    res.json(data); // This will include the `_id` for each document
-  } catch (err) {
-    res.status(500).send('Error fetching data');
-  }
+    try {
+        const data = await DataModel.find(); // Fetch data from MongoDB
+        res.json(data); // Send the data as JSON
+    } catch (err) {
+        res.status(500).send('Error fetching data');
+    }
 });
+
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
