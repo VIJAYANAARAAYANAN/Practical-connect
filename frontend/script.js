@@ -16,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Clear previous data
                 dataContainer.innerHTML = '';
-
+  
+                
                 // Display the fetched data
                 data.forEach(item => {
                     const itemElement = document.createElement('p');
